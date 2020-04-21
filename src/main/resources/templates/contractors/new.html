@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Add a New Contractor</title>
+  <style>
+    form div p {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Add a new Contractor</h1>
+  <form action="/contractors" method="POST" th:object="${contractor}">
+    <div>
+      <label for="firstName">First Name</label>
+      <input type="text" th:field="*{firstName}" id="firstName" />
+      <p th:errors="*{firstName}"></p>
+    </div>
+    <div>
+      <label for="lastName">Last Name</label>
+      <input type="text" th:field="*{lastName}" id="lastName" />
+      <p th:errors="*{lastName}"></p>
+    </div>
+    <div>
+      <label for="emailAddress">Email Address</label>
+      <input type="email" th:field="*{emailAddress}" id="emailAddress" />
+      <p th:errors="*{emailAddress}"></p>
+    </div>
+    <div>
+      <label for="postalCode">Postal Code</label>
+      <input type="text" th:field="*{postalCode}" id="postalCode" />
+      <p th:errors="*{postalCode}"></p>
+    </div>
+    <div>
+      <label for="weeklyHoursAvailable">Weekly Hours Available</label>
+      <input type="text" th:field="*{weeklyHoursAvailable}" id="weeklyHoursAvailable" />
+      <p th:errors="*{weeklyHoursAvailable}"></p>
+    </div>
+    <div>
+      <label for="bio">Biography</label>
+      <textarea type="text" th:field="*{bio}" id="bio" />
+      <p th:errors="*{bio}"></p>
+    </div>
+    <div>
+      <input type="submit" value="Add New" />
+    </div>
+  </form>
+</body>
+</html>
